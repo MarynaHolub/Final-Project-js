@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--main-color);
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+:root {
+  --main-color: #212121;
+  --space-1: 8px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 11px 24px;
+}
+.header_links {
+  display: flex;
+  gap: 40px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.header input {
+  border: 1px solid #d9d9d9;
+  padding: 12px 30px;
+}
+.header_search {
+  display: flex;
+  gap: 0;
+}
+.header_search button {
+  background-color: #f65858;
+  padding: 10px;
+  border-start-end-radius: var(--space-1);
+  border-bottom-right-radius: var(--space-1);
+  border: none;
+}
+.input-first {
+  background-image: url("../assets/svg/loop.svg");
+  background-repeat: no-repeat;
+  background-position: var(--space-1);
+
+  /* color: #707070; */
+  border-start-start-radius: var(--space-1);
+  border-bottom-left-radius: var(--space-1);
+}
+.input-second {
+  color: black;
+}
+
+.header_actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 0.8rem;
+  margin-right: 16px;
+}
+.header_actions-language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.header_actions-language span {
+  color: var(--main-color);
+}
+.login {
+  color: var(--main-color);
+}
+
+.primary-btn {
+  color: white;
+  background-color: #00798a;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--space-1);
+}
+
+.container {
+  max-width: 1196px;
+  width: 100%;
+  margin: 0 auto;
+}
+.about {
+  display: flex;
+  margin-top: 75px;
+  margin-bottom: 120px;
+  gap: 100px;
+}
+.about-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex: 1;
+}
+.about-rights {
+  flex: 1;
+}
+.about-links h1 {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 42px;
+  line-height: 2.6rem;
+  vertical-align: middle;
+}
+.about-links a {
+  align-self: flex-start;
+  font-size: 1rem;
+  line-height: 24px;
+}
