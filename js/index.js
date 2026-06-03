@@ -64,9 +64,19 @@ const eventsStore = [
     category: "Health and Wellbeing",
     distance: 15,
   },
+  {
+    title: "All Nations - Manhattan Missions Church Bible Study",
+    description: "Manhattan Bible Study Meetup Group",
+    date: new Date(2024, 2, 14, 11),
+    image:
+      "https://plus.unsplash.com/premium_photo-1679488248784-65a638a3d3fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    type: "online",
+    category: "Health and Wellbeing",
+    distance: 15,
+  },
 ]
 
-const eventsSection = document.querySelector(".events-section")
+const eventsSection = document.querySelector(".events")
 
 function renderEvents(arr) {
   const eventsContent = document.createElement("div")
@@ -90,3 +100,31 @@ function renderEvents(arr) {
   })
 }
 renderEvents(eventsStore)
+
+const onlineEventsSection = document.querySelector(".online-events")
+
+function renderOnlineEvents(arr) {
+  const onlineEventsContent = document.createElement("div")
+  onlineEventsContent.classList.add("events__content")
+  arr.forEach((elem) => {
+    if (!elem.attendees) {
+      elem.attendees = 0
+    }
+
+    if (elem.type === "online") {
+      const event = document.createElement("div")
+      event.classList.add("event")
+      event.innerHTML = `
+        <a href="#"><img class="event__img"  src=${elem.image} alt="event"></a>
+        <h3 class="event__title">${elem.title}</h3>
+        <p class="event__category">${elem.category}</p>
+        <p class="event__date">${elem.date}</p>
+        <div class="event-row"><p class="event__attendees">${elem.attendees} going</p>
+        <p class="availability">Free</p></div>
+        `
+      onlineEventsContent.append(event)
+      onlineEventsSection.append(onlineEventsContent)
+    }
+  })
+}
+renderOnlineEvents(eventsStore)
