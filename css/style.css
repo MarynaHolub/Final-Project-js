@@ -31,9 +31,9 @@ h2 {
   line-height: 2.25rem;
 }
 h3 {
-  font-family: Roboto;
   font-weight: 600;
   font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 a {
   text-decoration: none;
@@ -341,4 +341,34 @@ button {
   line-height: 28px;
   text-align: center;
   vertical-align: middle;
+}
+
+/* how-works */
+.how-works {
+  margin-top: 64px;
+}
+.how-works-wrapper {
+  margin-top: 24px;
+  display: flex;
+  gap: 32px;
+}
+.how-works-content {
+  padding: 32px 24px;
+  flex: 1;
+  background-color: #97cad114;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.how-works-content img {
+  max-width: 41px;
+}
+.how-works-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.how-works-group a {
+  font-weight: 500;
+  color: #00798a;
 }
