@@ -254,18 +254,18 @@ button {
   justify-content: space-between;
 }
 
-/* sign-up */
-.sign-up {
+/* join-meetup */
+.join-meetup {
   margin-top: 90px;
   background-color: #97cad114;
   padding: 36px 56px;
   display: flex;
   gap: 90px;
 }
-.sign-up__links {
+.join-meetup__links {
   flex: 2;
 }
-.sign-up__content {
+.join-meetup__content {
   margin: 16px 0;
 }
 .secondary-btn {
@@ -277,6 +277,32 @@ button {
   text-align: center;
   border-radius: var(--space-1);
 }
-.sign-up__rights {
+.join-meetup__rights {
   flex: 1;
+}
+
+/* categories */
+.categories {
+  margin-top: 64px;
+}
+.categories-content {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.categorie-card {
+  max-width: 135px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 22px;
+
+  background-color: #97cad114;
+}
+a.categorie-card {
+  text-align: center;
 }
