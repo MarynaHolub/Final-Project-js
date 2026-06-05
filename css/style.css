@@ -35,6 +35,11 @@ h3 {
   font-size: 1.25rem;
   line-height: 1.5rem;
 }
+h4 {
+  font-weight: 600;
+  font-size: 1.12rem;
+  line-height: 1.5rem;
+}
 a {
   text-decoration: none;
   cursor: pointer;
@@ -358,7 +363,7 @@ button {
   background-color: #97cad114;
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 24px;
 }
 .how-works-content img {
   max-width: 41px;
@@ -370,5 +375,42 @@ button {
 }
 .how-works-group a {
   font-weight: 500;
+  color: #00798a;
+}
+/* friendships */
+.friendships {
+  margin-top: 64px;
+}
+.friendships-description {
+  margin-top: 16px;
+  color: #707070;
+}
+.friendships-wrapper {
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.friendships-post {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.friendships-post img {
+  max-width: 376px;
+  width: 100%;
+  height: 191px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.friendships-post p {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  color: #707070;
+}
+.friendships-post span {
+  margin-top: 16px;
   color: #00798a;
 }
