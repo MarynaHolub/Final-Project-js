@@ -40,6 +40,16 @@ h4 {
   font-size: 1.12rem;
   line-height: 1.5rem;
 }
+h5 {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+h6 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 a {
   text-decoration: none;
   cursor: pointer;
@@ -413,4 +423,74 @@ button {
 .friendships-post span {
   margin-top: 16px;
   color: #00798a;
+}
+/* footer */
+.footer {
+  background-color: #212121;
+  color: #f6f7f8;
+}
+.footer-container {
+  max-width: 1120px;
+  width: 100%;
+  margin: 53px auto;
+}
+.footer-create-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 24px 0;
+  border-bottom: 1px solid #707070;
+}
+.footer-create-group a {
+  padding: 10px 14px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: var(--space-1);
+}
+.footer-nav {
+  margin: 24px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.footer-nav a {
+  color: #c5c4c4;
+}
+.footer-nav-account,
+.footer-nav-discover,
+.footer-nav-meetup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+.footer-social {
+  margin: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.footer-social-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-social-left-wrapper {
+  display: flex;
+  gap: 32px;
+}
+.footer-social-right {
+  display: flex;
+  gap: 22px;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  padding: 40px 0;
+}
+.footer-links a {
+  color: #c5c4c4;
+}
+.footer-links p {
+  color: #ffffff;
 }
