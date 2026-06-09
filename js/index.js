@@ -65,42 +65,77 @@ const eventsStore = [
     distance: 15,
   },
   {
-    title: "All Nations - Manhattan Missions Church Bible Study",
-    description: "Manhattan Bible Study Meetup Group",
-    date: new Date(2024, 2, 14, 11),
+    title: "Dump writing group weekly meetup",
+    description: "Dump writing group",
+    date: new Date(2024, 2, 13, 11),
     image:
-      "https://plus.unsplash.com/premium_photo-1679488248784-65a638a3d3fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1678453146992-b80d66df9152?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     type: "online",
-    category: "Health and Wellbeing",
-    distance: 15,
+    attendees: 77,
+    category: "Business",
+    distance: 100,
   },
 ]
+
+// форматируем дату
+const formatEventDate = (date) => {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  }).formatToParts(date)
+
+  const get = (type) => parts.find((p) => p.type === type)?.value
+
+  return `${get("weekday")}, ${get("month")} ${get("day")} · ${get("hour")}:${get("minute")} ${get("dayPeriod")}`
+}
 
 const eventsSection = document.querySelector(".events")
 
 function renderEvents(arr) {
   const eventsContent = document.createElement("div")
   eventsContent.classList.add("events__content")
+
   arr.forEach((elem) => {
     if (!elem.attendees) {
       elem.attendees = 0
     }
+
     const event = document.createElement("div")
     event.classList.add("event")
     event.innerHTML = `
-        <a href="#"><img class="event__img"  src=${elem.image} alt="event"></a>
-        <h3 class="event__title">${elem.title}</h3>
+        <div class="event__img-wrapper"><a href="#"><img class="event__img"  src=${elem.image} alt="event"></a>
+            ${
+              elem.type === "online"
+                ? '<img class="event__type" src="./assets/svg/online-event.svg" alt="online">'
+                : ""
+            }
+        </div>
+        <div class="event__wrapper"><h3 class="event__title">${elem.title}</h3>
         <p class="event__category">${elem.category}</p>
-        <p class="event__date">${elem.date}</p>
-        <div class="event-row"><p class="event__attendees">${elem.attendees} going</p>
+        <p class="event__date">${formatEventDate(elem.date)}</p>
+        
+        <div class="event-row"><p class="event__going">${elem.attendees} going</p>
         <p class="availability">Free</p></div>
-        `
+          ${
+            elem.type === "online"
+              ? '<img class="event__type-mobile" src="./assets/svg/online-event.svg" alt="online">'
+              : ""
+          }
+          <p class="event__attendees">${elem.attendees} attendies</p>
+         </div>
+         
+          `
     eventsContent.append(event)
-    eventsSection.append(eventsContent)
   })
+  eventsSection.append(eventsContent)
 }
 renderEvents(eventsStore)
 
+//  online
 const onlineEventsSection = document.querySelector(".online-events")
 
 function renderOnlineEvents(arr) {
@@ -115,16 +150,30 @@ function renderOnlineEvents(arr) {
       const event = document.createElement("div")
       event.classList.add("event")
       event.innerHTML = `
-        <a href="#"><img class="event__img"  src=${elem.image} alt="event"></a>
-        <h3 class="event__title">${elem.title}</h3>
+        <div class="event__img-wrapper"><a href="#"><img class="event__img"  src=${elem.image} alt="event"></a>
+            ${
+              elem.type === "online"
+                ? '<img class="event__type" src="./assets/svg/online-event.svg" alt="online">'
+                : ""
+            }
+        </div>
+        <div class="event__wrapper"><h3 class="event__title">${elem.title}</h3>
         <p class="event__category">${elem.category}</p>
-        <p class="event__date">${elem.date}</p>
-        <div class="event-row"><p class="event__attendees">${elem.attendees} going</p>
+        <p class="event__date">${formatEventDate(elem.date)}</p>
+        
+        <div class="event-row"><p class="event__going">${elem.attendees} going</p>
         <p class="availability">Free</p></div>
+          ${
+            elem.type === "online"
+              ? '<img class="event__type-mobile" src="./assets/svg/online-event.svg" alt="online">'
+              : ""
+          }
+          <p class="event__attendees">${elem.attendees} attendies</p>
+         </div>
         `
       onlineEventsContent.append(event)
-      onlineEventsSection.append(onlineEventsContent)
     }
   })
+  onlineEventsSection.append(onlineEventsContent)
 }
 renderOnlineEvents(eventsStore)
