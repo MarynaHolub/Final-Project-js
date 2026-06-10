@@ -1,0 +1,122 @@
+/* header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 11px 24px;
+}
+.header_logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.header_center {
+  display: flex;
+  gap: 40px;
+  flex: 1 1 592px;
+}
+.header_actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 0.8rem;
+
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.header input {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  padding: 12px 30px;
+}
+.header_search {
+  display: flex;
+  gap: 0;
+}
+.header_search button {
+  background-color: #f65858;
+  padding: var(--space-2);
+  border-start-end-radius: var(--space-1);
+  border-bottom-right-radius: var(--space-1);
+  border: none;
+}
+.input-first {
+  background-image: url("../assets/svg/loop.svg");
+  background-repeat: no-repeat;
+  background-position: var(--space-1);
+
+  border-start-start-radius: var(--space-1);
+  border-bottom-left-radius: var(--space-1);
+}
+.input-second::placeholder {
+  color: black;
+}
+
+.header_actions span {
+  font-weight: 500;
+}
+.header_actions-language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.header_actions-language span {
+  color: var(--main-color);
+}
+.login {
+  color: var(--main-color);
+}
+
+.primary-btn,
+.secondary-btn {
+  color: white;
+  background-color: #00798a;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--space-1);
+}
+
+/* @media */
+@media (max-width: 393px) {
+  .header {
+    flex-wrap: wrap;
+
+    gap: 16px;
+    margin-left: 24px;
+    margin-top: 6px;
+    margin-right: 7px;
+  }
+  .logo {
+    order: 1;
+    flex: 0 0 auto;
+    /* flex: none; */
+  }
+  .header_actions {
+    order: 2;
+
+    flex: 0 0 auto;
+    /* flex: none; */
+    margin-left: auto;
+    gap: 18px;
+  }
+  .header_center {
+    order: 3;
+    flex: 0 0 342px;
+  }
+  .header_search {
+    width: 100%;
+  }
+  .input-second {
+    display: none;
+  }
+  .header_actions span {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-second {
+    display: none;
+  }
+}

@@ -1,3 +1,18 @@
+// Загрузка header.html
+fetch("components/header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data
+  })
+
+// Загрузка footer.html
+fetch("components/footer.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("footer").innerHTML = data
+  })
+
+// массив с данными
 const eventsStore = [
   {
     title: "INFJ Personality Type - Coffee Shop Meet & Greet",
@@ -93,6 +108,7 @@ const formatEventDate = (date) => {
   return `${get("weekday")}, ${get("month")} ${get("day")} · ${get("hour")}:${get("minute")} ${get("dayPeriod")}`
 }
 
+// рендерим карточки событий
 const eventsSection = document.querySelector(".events")
 
 function renderEvents(arr) {
@@ -177,3 +193,6 @@ function renderOnlineEvents(arr) {
   onlineEventsSection.append(onlineEventsContent)
 }
 renderOnlineEvents(eventsStore)
+
+// -------------
+

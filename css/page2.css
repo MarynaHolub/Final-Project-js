@@ -1,0 +1,85 @@
+@import url(./header.css);
+@import url(./footer.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #212121;
+  --space-1: 8px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+}
+
+html {
+  font-size: 16px;
+}
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: var(--main-color);
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 2.6rem;
+}
+h2 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+h3 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+h4 {
+  font-weight: 600;
+  font-size: 1.12rem;
+  line-height: 1.5rem;
+}
+h5 {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+h6 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--main-color);
+}
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1512px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.events-content {
+  display: flex;
+  gap: 267px;
+  justify-content: space-between;
+}
+
+.events__header {
+}
+.events__left {
+}
+.events__right {
+}
