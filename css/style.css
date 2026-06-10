@@ -149,6 +149,7 @@ button {
   margin-top: 75px;
   margin-bottom: 120px;
   gap: 100px;
+  flex-wrap: wrap;
 }
 .about-left {
   display: flex;
@@ -159,6 +160,8 @@ button {
 }
 .about-right {
   flex: 1;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .about-left a {
@@ -172,6 +175,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin: var(--space-4) 0;
 }
 .events__group {
@@ -210,7 +214,8 @@ button {
 .events__content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
-  gap: 36px;
+  justify-content: center;
+  gap: 28px;
 }
 .event {
   max-width: 272px;
@@ -294,7 +299,7 @@ button {
 }
 .online-events_group {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* join-meetup */
@@ -336,8 +341,8 @@ button {
 .categories-content {
   margin-top: var(--space-4);
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
+  gap: 12px;
   flex-wrap: wrap;
 }
 .categorie-card {
@@ -369,8 +374,9 @@ button {
 }
 .popular-cities-content {
   display: flex;
-  justify-content: space-between;
-  gap: 42px;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
   flex-wrap: wrap;
 }
 
@@ -432,7 +438,8 @@ button {
 .friendships-wrapper {
   margin-top: 28px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 32px;
 }
 
@@ -473,6 +480,7 @@ button {
   max-width: 1120px;
   width: 100%;
   margin: 53px auto;
+  padding: 0 10px;
 }
 .footer-create-group {
   display: flex;
@@ -507,6 +515,7 @@ button {
 .footer-social {
   margin: 24px 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: end;
 }
@@ -624,7 +633,6 @@ button {
     font-size: 0.75rem;
   }
   .about-right {
-    display: flex;
     justify-content: center;
   }
   .about-right img {
@@ -735,7 +743,7 @@ button {
     display: block;
   }
   .secondary-btn-mobile {
-    display: block;
+    /* display: block; */
     width: 192px;
     padding: 12px;
     color: white;
@@ -864,6 +872,9 @@ button {
   }
   .about {
     flex-direction: column;
+  }
+  .about-right {
+    justify-content: center;
   }
   .friendships-wrapper {
     flex-direction: column;
