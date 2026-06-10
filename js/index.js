@@ -109,9 +109,10 @@ const formatEventDate = (date) => {
 }
 
 // рендерим карточки событий
-const eventsSection = document.querySelector(".events")
+// Основная универсальная функция
+function renderEventsToSection(arr, targetSection) {
+  if (targetSection) targetSection.innerHTML = ""
 
-function renderEvents(arr) {
   const eventsContent = document.createElement("div")
   eventsContent.classList.add("events__content")
 
@@ -147,52 +148,23 @@ function renderEvents(arr) {
           `
     eventsContent.append(event)
   })
-  eventsSection.append(eventsContent)
+  targetSection.append(eventsContent)
 }
-renderEvents(eventsStore)
 
-//  online
-const onlineEventsSection = document.querySelector(".online-events")
+// Функции для .events
+function renderAllEvents(arr) {
+  const eventsSection = document.querySelector(".events")
+  renderEventsToSection(arr, eventsSection)
+}
 
+// Функции для .online-events
 function renderOnlineEvents(arr) {
-  const onlineEventsContent = document.createElement("div")
-  onlineEventsContent.classList.add("events__content")
-  arr.forEach((elem) => {
-    if (!elem.attendees) {
-      elem.attendees = 0
-    }
-
-    if (elem.type === "online") {
-      const event = document.createElement("div")
-      event.classList.add("event")
-      event.innerHTML = `
-        <div class="event__img-wrapper"><a href="#"><img class="event__img"  src=${elem.image} alt="event"></a>
-            ${
-              elem.type === "online"
-                ? '<img class="event__type" src="./assets/svg/online-event.svg" alt="online">'
-                : ""
-            }
-        </div>
-        <div class="event__wrapper"><h3 class="event__title">${elem.title}</h3>
-        <p class="event__category">${elem.category}</p>
-        <p class="event__date">${formatEventDate(elem.date)}</p>
-        
-        <div class="event-row"><p class="event__going">${elem.attendees} going</p>
-        <p class="availability">Free</p></div>
-          ${
-            elem.type === "online"
-              ? '<img class="event__type-mobile" src="./assets/svg/online-event.svg" alt="online">'
-              : ""
-          }
-          <p class="event__attendees">${elem.attendees} attendies</p>
-         </div>
-        `
-      onlineEventsContent.append(event)
-    }
-  })
-  onlineEventsSection.append(onlineEventsContent)
+  const onlineEventsSection = document.querySelector(".online-events")
+  const onlineOnly = arr.filter((event) => event.type === "online")
+  renderEventsToSection(onlineOnly, onlineEventsSection)
 }
-renderOnlineEvents(eventsStore)
 
-// -------------
+renderAllEvents(eventsStore) // все события в .events
+renderOnlineEvents(eventsStore) // только онлайн в .online-events
 
+// ---------------------
