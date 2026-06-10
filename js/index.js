@@ -50,7 +50,7 @@ const eventsStore = [
   {
     title: "Dump writing group weekly meetup",
     description: "Dump writing group",
-    date: new Date(2024, 2, 13, 11),
+    date: new Date(2024, 2, 14, 20),
     image:
       "https://plus.unsplash.com/premium_photo-1678453146992-b80d66df9152?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     type: "online",
@@ -151,15 +151,17 @@ function renderEventsToSection(arr, targetSection) {
   targetSection.append(eventsContent)
 }
 
-// Функции для .events
+const eventsSection = document.querySelector(".events")
+// Функция для .events
 function renderAllEvents(arr) {
-  const eventsSection = document.querySelector(".events")
+  if (!eventsSection) return
   renderEventsToSection(arr, eventsSection)
 }
 
-// Функции для .online-events
+// Функция для .online-events
 function renderOnlineEvents(arr) {
   const onlineEventsSection = document.querySelector(".online-events")
+  if (!onlineEventsSection) return
   const onlineOnly = arr.filter((event) => event.type === "online")
   renderEventsToSection(onlineOnly, onlineEventsSection)
 }
@@ -167,4 +169,60 @@ function renderOnlineEvents(arr) {
 renderAllEvents(eventsStore) // все события в .events
 renderOnlineEvents(eventsStore) // только онлайн в .online-events
 
-// ---------------------
+// фильтрация мероприятий
+
+const categorySelect = document.getElementById("category")
+const typeSelect = document.getElementById("type")
+const distanceSelect = document.getElementById("distance")
+const daySelect = document.getElementById("day")
+
+// При изменении фильтра:
+function updateAllFilters() {
+  const selectedCategory = categorySelect.value
+  const selectedType = typeSelect.value
+  const selectedDistance = distanceSelect.value
+  const selectedDay = daySelect.value
+
+  console.log("Выбранные фильтры:", {
+    category: selectedCategory,
+    type: selectedType,
+    distance: selectedDistance,
+    day: selectedDay,
+  })
+
+  // Фильтрация массива eventsStore
+  let filtered = [...eventsStore]
+
+  if (selectedCategory) {
+    filtered = filtered.filter((e) => e.category === selectedCategory)
+  }
+  if (selectedType) {
+    filtered = filtered.filter((e) => e.type === selectedType)
+  }
+  if (selectedDistance) {
+    filtered = filtered.filter((e) => e.distance <= selectedDistance)
+  }
+  if (selectedDay) {
+    const selectedDate = new Date(selectedDay)
+    filtered = filtered.filter(
+      (e) => e.date.toDateString() === selectedDate.toDateString(),
+    )
+  }
+  console.log("Отфильтровано событий:", filtered.length)
+
+  if (filtered.length === 0) {
+    eventsSection.innerHTML = `<p class="message">Мероприятия отсутствуют</p>`
+    return
+  }
+
+  // показываем итоговые события
+  renderAllEvents(filtered)
+}
+
+categorySelect.addEventListener("change", updateAllFilters)
+typeSelect.addEventListener("change", updateAllFilters)
+distanceSelect.addEventListener("change", updateAllFilters)
+daySelect.addEventListener("change", updateAllFilters)
+
+// Первоначальная загрузка
+updateAllFilters()

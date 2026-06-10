@@ -71,83 +71,75 @@ button {
   padding: 0 10px;
 }
 
-.events-content {
+.events-filtered {
   display: flex;
   gap: 267px;
-  justify-content: space-between;
+}
+.events__content {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.event {
+  display: flex;
+  max-width: 604px;
+  width: 100%;
+
+  gap: 7px;
+  padding-top: 10px;
+  border-top: 0.6px solid #d9d9d9;
+}
+.event__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.event__date {
+  order: 1;
+}
+.event__title {
+  order: 2;
+}
+.event__category {
+  order: 3;
+}
+.event-row {
+  display: none;
+}
+.event__type-mobile {
+  display: block;
+  order: 4;
+  width: 64px;
+}
+.event__type {
+  display: none;
+}
+.event__category,
+.event__date,
+.event__attendees {
+  font-weight: 400;
+  font-size: 0.56rem;
+  line-height: 0.8rem;
+}
+.event__img {
+  width: 97px;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--space-1);
+}
+.event__date {
+  color: #7c6f50;
+}
+.event__date::before {
+  display: none;
+}
+.event__attendees {
+  display: block;
+  order: 5;
+  color: #707070;
+  margin-top: 17px;
 }
 
-.events__header {
-}
-.events__left {
-}
-.events__right {
-}
-
-.events__header {
-    margin-bottom: 10px;
-  }
-  .events__content {
-    gap: 20px;
-  }
-  .event {
-    max-width: 364px;
-    width: 100%;
-    flex-direction: row;
-    gap: 7px;
-    padding-top: 10px;
-    border-top: 0.6px solid #d9d9d9;
-  }
-  .event__wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  .event__date {
-    order: 1;
-  }
-  .event__title {
-    order: 2;
-  }
-  .event__category {
-    order: 3;
-  }
-  .event-row {
-    display: none;
-  }
-  .event__type-mobile {
-    display: block;
-    order: 4;
-    width: 64px;
-  }
-  .event__type {
-    display: none;
-  }
-  .event__category,
-  .event__date,
-  .event__attendees {
-    font-weight: 400;
-    font-size: 0.56rem;
-    line-height: 0.8rem;
-  }
-  .event__img {
-    width: 97px;
-    height: auto;
-    object-fit: cover;
-  }
-  .event__date {
-    color: #7c6f50;
-  }
-  .event__date::before {
-    display: none;
-  }
-  .event__attendees {
-    display: block;
-    order: 5;
-    color: #707070;
-    margin-top: 17px;
-  }
-
-  /* @media */
-@media (max-width: 393px){
-  
+/* @media */
+@media (max-width: 393px) {
 }
