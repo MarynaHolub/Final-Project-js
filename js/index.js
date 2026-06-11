@@ -151,7 +151,7 @@ function renderEventsToSection(arr, targetSection) {
   targetSection.append(eventsContent)
 }
 
-const eventsSection = document.querySelector(".events")
+const eventsSection = document.querySelector(".events__wrapper")
 // Функция для .events
 function renderAllEvents(arr) {
   if (!eventsSection) return
@@ -160,7 +160,7 @@ function renderAllEvents(arr) {
 
 // Функция для .online-events
 function renderOnlineEvents(arr) {
-  const onlineEventsSection = document.querySelector(".online-events")
+  const onlineEventsSection = document.querySelector(".online-events__wrapper")
   if (!onlineEventsSection) return
   const onlineOnly = arr.filter((event) => event.type === "online")
   renderEventsToSection(onlineOnly, onlineEventsSection)
