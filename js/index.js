@@ -132,7 +132,7 @@ function renderEventsToSection(arr, targetSection) {
             }
         </div>
         <div class="event__wrapper"><h3 class="event__title">${elem.title}</h3>
-        <p class="event__category">${elem.category}</p>
+        <p class="event__category">${elem.category} (${elem.distance} km)</p>
         <p class="event__date">${formatEventDate(elem.date)}</p>
         
         <div class="event-row"><p class="event__going">${elem.attendees} going</p>
@@ -194,18 +194,21 @@ function updateAllFilters() {
   let filtered = [...eventsStore]
 
   if (selectedCategory) {
-    filtered = filtered.filter((e) => e.category === selectedCategory)
+    filtered = filtered.filter((elem) => elem.category === selectedCategory)
   }
   if (selectedType) {
-    filtered = filtered.filter((e) => e.type === selectedType)
+    filtered = filtered.filter((elem) => elem.type === selectedType)
   }
+  // if (selectedType === "online" && selectedDistance) {
+  //   selectedDistance = "Any distance"
+  // }
   if (selectedDistance) {
-    filtered = filtered.filter((e) => e.distance <= selectedDistance)
+    filtered = filtered.filter((elem) => elem.distance <= selectedDistance)
   }
   if (selectedDay) {
     const selectedDate = new Date(selectedDay)
     filtered = filtered.filter(
-      (e) => e.date.toDateString() === selectedDate.toDateString(),
+      (elem) => elem.date.toDateString() === selectedDate.toDateString(),
     )
   }
   console.log("Отфильтровано событий:", filtered.length)

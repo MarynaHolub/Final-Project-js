@@ -47,7 +47,7 @@ h4 {
 }
 h5 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.5rem;
 }
 h6 {
@@ -68,7 +68,7 @@ button {
   max-width: 1196px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 var(--space-2);
 }
 /* about */
 .about {
@@ -163,20 +163,28 @@ button {
 }
 .event__type {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: var(--space-2);
+  left: var(--space-2);
 
   z-index: 100;
 }
 .event__type-mobile {
   display: none;
 }
+.event__wrapper {
+  max-width: 230px;
+  width: 100%;
+}
 .event__category {
   font-weight: 500;
+  font-size: 0.87rem;
+  line-height: 1.25rem;
   color: #707070;
+  padding: 16px 0;
 }
 .event__date {
   text-transform: uppercase;
+  padding-bottom: 12px;
 }
 .event__date::before {
   content: "";
@@ -242,12 +250,12 @@ button {
   flex: 2;
 }
 .join-meetup__content {
-  margin: 16px 0;
+  margin: var(--space-3) 0;
 }
 .join-meetup-btn {
   display: block;
   width: 192px;
-  padding: 8px;
+  padding: var(--space-1);
   color: white;
   background-color: #e32359;
   text-align: center;
@@ -295,7 +303,7 @@ button {
   margin-top: 64px;
 }
 .popular-cities p {
-  margin-top: 16px;
+  margin-top: var(--space-3);
   margin-bottom: 28px;
   color: #707070;
 }
@@ -329,10 +337,10 @@ button {
 .how-works-wrapper {
   margin-top: var(--space-2);
   display: flex;
-  gap: 32px;
+  gap: var(--space-5);
 }
 .how-works-content {
-  padding: 32px 24px;
+  padding: var(--space-5) var(--space-4);
   flex: 1;
   background-color: #97cad114;
   display: flex;
@@ -345,7 +353,7 @@ button {
 .how-works-group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-3);
 }
 .how-works-group a {
   font-weight: 500;
@@ -359,7 +367,7 @@ button {
 .friendships-description {
   max-width: 880px;
   width: 100%;
-  margin-top: 16px;
+  margin-top: var(--space-3);
   color: #707070;
 }
 .friendships-wrapper {
@@ -367,7 +375,7 @@ button {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: var(--space-5);
 }
 
 .friendships-post {
@@ -391,11 +399,11 @@ button {
   max-width: 366px;
   width: 100%;
   margin-top: 12px;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-3);
   color: #707070;
 }
 .friendships-post span {
-  margin-top: 16px;
+  margin-top: var(--space-3);
   color: #00798a;
 }
 
@@ -410,8 +418,9 @@ button {
     line-height: 1.5rem;
   }
   h3 {
-    font-size: 0.75rem;
+    font-size: 0.62rem;
     line-height: 0.8rem;
+    font-weight: 500;
   }
   h4 {
     font-weight: 600;
@@ -419,9 +428,8 @@ button {
     line-height: 1.6rem;
   }
   h5 {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 0.75rem;
+    line-height: 0.9rem;
   }
   h6 {
     font-weight: 400;
@@ -437,7 +445,7 @@ button {
   .about {
     margin-top: 30px;
     margin-bottom: 20px;
-    gap: 10px;
+    gap: var(--space-2);
     flex-direction: column;
   }
 
@@ -468,12 +476,15 @@ button {
     line-height: 1.1rem;
 
     width: 164px;
-    padding: 8px;
+    padding: var(--space-1);
     background-position: 140px;
     background-size: 15px 15px;
   }
   .events__header {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-3);
+  }
+  .events__group {
+    gap: var(--space-1);
   }
   .events__content {
     gap: 20px;
@@ -483,7 +494,7 @@ button {
     width: 100%;
     flex-direction: row;
     gap: 7px;
-    padding-top: 10px;
+    padding-top: var(--space-2);
     border-top: 0.6px solid #d9d9d9;
   }
   .event__wrapper {
@@ -491,12 +502,14 @@ button {
     flex-direction: column;
   }
   .event__date {
+    padding-bottom: 5px;
     order: 1;
   }
   .event__title {
     order: 2;
   }
   .event__category {
+    padding: unset;
     order: 3;
   }
   .event-row {
@@ -538,7 +551,7 @@ button {
   /* join-meetup */
   .join-meetup {
     margin-top: 54px;
-    padding: 16px;
+    padding: var(--space-3);
     flex-direction: column;
     gap: 6px;
   }
@@ -564,15 +577,16 @@ button {
   }
   /* categorie */
   .categories {
-    margin-top: 16px;
+    margin-top: unset;
   }
   .categories-content {
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 23px;
   }
   .categorie-card {
     width: 135px;
+    border-radius: var(--space-1);
   }
 
   /* popular-cities */
@@ -585,7 +599,6 @@ button {
   }
 
   .popular-cities-content {
-    flex-wrap: wrap;
     gap: 18px;
   }
   .popular-cities-content > :nth-child(n + 5) {
@@ -602,17 +615,19 @@ button {
     height: auto;
     object-fit: cover;
   }
-  /* how-works-wrapper */
+  /* how-works */
   .how-works-wrapper {
     margin-top: 18px;
     flex-direction: column;
     gap: 14px;
   }
   .how-works {
-    margin-top: 42px;
+    margin-top: 43px;
   }
   .how-works-group {
-    gap: 10px;
+    max-width: 210px;
+    width: 100%;
+    gap: var(--space-2);
   }
   .how-works-group p,
   .how-works-group a {
@@ -654,6 +669,12 @@ button {
   }
   .about-right {
     justify-content: center;
+  }
+  .popular-cities-content {
+    gap: 18px;
+  }
+  .popular-cities-card {
+    width: 153px;
   }
   .friendships-wrapper {
     flex-direction: column;

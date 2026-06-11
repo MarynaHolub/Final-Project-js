@@ -9,7 +9,6 @@
   <body>
     <div id="header"></div>
     <main>
-
       <section class="events-filtered container">
         <div class="events-wrapper">
           <h2>Events near New York, NY</h2>
@@ -17,16 +16,16 @@
 
           <form id="formWithFilter" class="form-filtr">
             <div class="form-group">
-              <label for="type">Any type</label>
-              <select name="type" id="type">
-                <option value="">All Types</option>
+              <!-- <label class="form-group-label" for="type">Any type</label> -->
+              <select class="form-group-select" name="type" id="type">
+                <option value="">Any type</option>
                 <option value="online">Online</option>
                 <option value="offline">Offline</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="distance">Any distance</label>
-              <select name="distance" id="distance">
+              <!-- <label class="form-group-label" for="distance">Any distance</label> -->
+              <select class="form-group-select" name="distance" id="distance">
                 <option value="">Any distance</option>
                 <option value="5">5 km</option>
                 <option value="10">10 km</option>
@@ -38,9 +37,9 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="category">Any category</label>
-              <select name="category" id="category">
-                <option value="">All Categories</option>
+              <!-- <label class="form-group-label" for="category">Any category</label> -->
+              <select class="form-group-select" name="category" id="category">
+                <option value="">Any Categories</option>
                 <option value="Social Activities">Social Activities</option>
                 <option value="Hobbies and Passions">
                   Hobbies and Passions
@@ -53,24 +52,14 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="day">Day</label>
-              <select name="day" id="day">
+              <!-- <label class="form-group-label" for="day">Any day</label> -->
+              <select class="form-group-select" name="day" id="day">
                 <option value="">Any day</option>
-                <option value="2024-03-13T11:00:00">
-                  Mar 13, 11:00 AM
-                </option>
-                <option value="2024-03-14T11:00:00">
-                  Mar 14, 11:00 AM
-                </option>
-                <option value="2024-03-14T20:00:00">
-                  Mar 14, 8:00 PM
-                </option>
-                <option value="2024-03-16T14:00:00">
-                  Mar 16, 2:00 PM
-                </option>
-                <option value="2024-03-23T15:00:00">
-                  Mar 23, 15:00 PM
-                </option>
+                <option value="2024-03-13T11:00:00">Mar 13, 11:00 AM</option>
+                <option value="2024-03-14T11:00:00">Mar 14, 11:00 AM</option>
+                <option value="2024-03-14T20:00:00">Mar 14, 8:00 PM</option>
+                <option value="2024-03-16T14:00:00">Mar 16, 2:00 PM</option>
+                <option value="2024-03-23T15:00:00">Mar 23, 15:00 PM</option>
               </select>
             </div>
           </form>
@@ -78,7 +67,7 @@
         </div>
         <div class="events-map">
           <p>Find events near</p>
-          <h3>New York, NY</h3>
+          <h4>New York, NY</h4>
 
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d294932.2065331819!2d-74.30917063299817!3d40.6971933466018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6!5e1!3m2!1suk!2sus!4v1781097924034!5m2!1suk!2sus"

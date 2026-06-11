@@ -78,7 +78,7 @@
 }
 
 @media (max-width: 393px) {
-    /* .footer */
+  /* .footer */
   .footer-container {
     padding-left: 18px;
     padding-top: 18px;
@@ -107,4 +107,3 @@
     display: none;
   }
 }
-
