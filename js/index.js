@@ -183,12 +183,12 @@ function updateAllFilters() {
   const selectedDistance = distanceSelect.value
   const selectedDay = daySelect.value
 
-  console.log("Выбранные фильтры:", {
-    category: selectedCategory,
-    type: selectedType,
-    distance: selectedDistance,
-    day: selectedDay,
-  })
+  // console.log("Выбранные фильтры:", {
+  //   category: selectedCategory,
+  //   type: selectedType,
+  //   distance: selectedDistance,
+  //   day: selectedDay,
+  // })
 
   // Фильтрация массива eventsStore
   let filtered = [...eventsStore]

@@ -112,6 +112,7 @@ button {
   flex-direction: column;
 }
 .event__date {
+  text-transform: uppercase;
   order: 1;
 }
 .event__title {
@@ -204,6 +205,7 @@ option {
   h3 {
     font-size: 0.62rem;
     line-height: 0.8rem;
+    font-weight: 500;
   }
   .events-map {
     display: none;
@@ -241,9 +243,16 @@ option {
     display: block;
     width: 64px;
   }
-  .event__category,
-  .event__date {
+  .event__title {
+    padding: 4px 0;
+  }
+  .event__category {
     font-weight: 400;
+    font-size: 0.56rem;
+    line-height: 0.8rem;
+  }
+  .event__date {
+    font-weight: 500;
     font-size: 0.56rem;
     line-height: 0.8rem;
   }
@@ -252,7 +261,7 @@ option {
   }
 
   .event__wrapper {
-    margin-top: 22px;
+    margin-top: 2px;
   }
   .form-filtr {
     gap: 5px;
@@ -262,7 +271,8 @@ option {
   }
   .form-group-select {
     padding: 3px;
-    font-size: 0.62rem;
+    font-size: 0.87rem;
+    font-weight: 500;
   }
   option {
     width: 70px;

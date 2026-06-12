@@ -19,7 +19,7 @@ html {
   font-size: 16px;
 }
 body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   color: var(--main-color);
   line-height: 1.5rem;
   font-weight: 400;
@@ -96,14 +96,7 @@ button {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-/* .secondary-btn {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
 
-.secondary-btn:hover {
-  transform: scale(1.1);
-} */
 /* events */
 .events__header {
   display: flex;
@@ -207,6 +200,7 @@ button {
 .event-row {
   display: flex;
   gap: var(--space-3);
+  align-items: center;
 }
 
 .event__going::before {
