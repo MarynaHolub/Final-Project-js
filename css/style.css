@@ -96,7 +96,14 @@ button {
   font-size: 1rem;
   line-height: 1.5rem;
 }
+/* .secondary-btn {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
 
+.secondary-btn:hover {
+  transform: scale(1.1);
+} */
 /* events */
 .events__header {
   display: flex;
@@ -291,6 +298,11 @@ button {
   padding: 22px;
 
   background-color: #97cad114;
+  transition: transform 0.3s ease-in-out;
+}
+
+.categorie-card:hover {
+  transform: scale(1.1);
 }
 
 .categorie-card span {
